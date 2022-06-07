@@ -1,12 +1,11 @@
 import React from 'react'
-import { IContacts } from '../../typpes'
 import Button from '../ui/button'
 import Input from '../ui/input'
 import Title from '../ui/title'
 
 const AddPhoneNum:React.FC<any> = ({data,closeModal,addPhoneNum}) => {
 
-    const [dataAdd, setDataAdd] = React.useState<IContacts>({
+    const [dataAdd, setDataAdd] = React.useState({
         phone:"",
         name:''
     })
@@ -40,10 +39,10 @@ const AddPhoneNum:React.FC<any> = ({data,closeModal,addPhoneNum}) => {
        
         </div>
         <div className="my-3">
-            <Input label='Enter Name' name='name' type='text' onChange={handleChange} value={data?.name} placeHolder={"Enter Name"}  />
+            <Input label='Enter Name' name='name' type='text' onChange={handleChange} value={dataAdd?.name} placeHolder={"Enter Name"}  />
         </div>
         <div className="my-3">
-            <Input label='Enter phone' name='phone' type='tel' onChange={handleChange} value={data?.phone} placeHolder={"Enter Phone"}  />
+            <Input label='Enter phone' name='phone' type='tel' onChange={handleChange} value={dataAdd?.phone} placeHolder={"Enter Phone"}  />
         </div>
         <div className="flex flex-col py-3 justify-center items-center md:flex-row space-x-5">
             <Button
