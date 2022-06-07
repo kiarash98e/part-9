@@ -79,9 +79,9 @@ const Calling: React.FC<any> = ({setCall}) => {
   return (
     <div className='flex flex-col min-h-screen'>
       <div className="flex flex-col p-4 fixed z-11 bottom-28">
-        <span className='text-white font-satisfy text-lg font-bold py-4 mx-[85px] md:mx-12'>{phone.length <= 11 ? phone : phoneCost}</span>
+        <span className='text-white  font-satisfy text-lg font-bold py-4 mx-[85px] md:mx-12'>{phone.length <= 11 ? phone : phoneCost}</span>
 
-        <div className="w-1/2 mx-16 md:mx-5 md:w-1/3 px-1">
+         <div className="w-1/2 mx-16 md:mx-5 md:w-1/3 px-1">
           {
             PhoneNum.length ?
               PhoneNum.map((item: any, i: any) => {
