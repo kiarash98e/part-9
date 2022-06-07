@@ -5,6 +5,7 @@ import CustomLink from '../../customLink/customLink'
 
 const MobileMenu: React.FC = () => {
 
+  
     return (
         <div className="fixed z-10 bottom-4 flex items-center justify-between w-[350px] mx-auto rounded-[4rem] text-gray-700 body-font bg-white h-16 sm:h-16 px-4">
             <Button
