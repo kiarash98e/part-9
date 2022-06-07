@@ -3,11 +3,12 @@ import React, { forwardRef, ButtonHTMLAttributes } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
-	variant?: "solid" | "rounded" | "circle";
+	variant?: "solid" | "rounded" | "circle" | "modal";
 	active?: boolean;
 	type?: "submit" | "reset" | "button";
 	loading?: boolean;
 	disabled?: boolean;
+	value?:string;
     onClick?:(e: any) => void
 }
 
@@ -19,6 +20,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 		active,
 		loading = false,
 		disabled = false,
+		value,
         onClick,
 		...rest
 	} = props;
@@ -33,7 +35,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 			"cursor-not-allowed": loading,
 			"cursor-not-allowed hover:cursor-not-allowed": disabled,
             "text-green" :active,
-            "bg-green text-white rounded-full": variant === 'circle'
+            "bg-green text-white rounded-full": variant === 'circle',
+			"text-white bg-green" : variant === "modal"
 		},
 		className
 	);
@@ -47,6 +50,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 			className={rootClassName}
 			disabled={disabled}
             onClick={onClick}
+			value={value}
 			{...rest}
 		>
 			{children}
